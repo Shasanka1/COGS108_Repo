@@ -1,20 +1,21 @@
-This is your group repo for your final project for COGS108.
+**Police Priority Calls Analytics in San Diego from 2020-2023**
 
-This repository is private, and is only visible to the course instructors and your group mates; it is not visible to anyone else.
+In San Diego, police calls have been an issue over the years. At the beginning of 2018, the city had more active crimes around the city. The shocking factor was that the number of police calls just in the 2 months of 2023 increased to the size of 83285 calls to the police. This number is alarming as per day average is around 1100-1200 calls a day. This issue is severe, and more importantly, it has increased is a concern. With this analysis, we wanted to focus on measuring if components like the day of the week, call type, neighborhood, description, disposition, and address played into predicting the priority level of calls As a result, we have found that there is fact a relationship of these variables that predict priority of calls in around San Diego, and we hope this provides a predictive model to improving reaction speed for SDPD.
 
-Template notebooks for each component are provided. Only work on the notebook prior to its due date. After each submission is due, move onto the next notebook (For example, after the proposal is due, start working in the Data Checkpoint notebook). 
+The continuous growth of police calls in recent years has led to social order challenges in San Diego. Ever since the rise of COVID-19 in late 2019, the rise of police calls in the San Diego Police Department showed an increase in calls. From an average of 23 minutes in 2019 to 21 minutes in 2018 and 28 minutes in 2020 [1]. However, the direct cause of this slowness in time can be based on the location of calls around the city and their frequency. As San Diego is broken up into 55 zip codes, the process of knowing where the call is coming from and going can cause this time to increase for responders.
 
-This repository will be frozen on the final project due date. No further changes can be made after that time.
+Prior work suggests that the increase in police response time can be from the type of crime. From the Voice at San Diego, response time for active domestic violence calls, assault, and indecent exposure incidents rose from 27.1 minutes to 49.2 from 2018 to 2022, but the time of mental health crisis increased from 50 minutes to 110 minutes [2]. Although the cause of crime can be differentiated on priority, the time for response to the time increased dramatically at all times. In order to understand this phenomenon, the best approach is to use police call service data to use multi-regression model analysis to predict correlations of call type, disposition, beat, location, and more with a priority of time. This way, this study can help police and local authorities with a better send of where calls are being predicted to come from and a faster way to get to them in a shorter amount of time.
 
-Your project proposal and final project will be graded based solely on the corresponding project notebooks in this repository.
+**Ethics & Privacy**
 
-Template Jupyter notebooks have been included, with your group number replacing the XXX in the following file names. For each due date, make sure you have a notebook present in this repository by each due date with the following name (where XXX is replaced by your group number):
+One ethical concern that arises in this project is the potential for bias in the data. For example, certain neighborhoods may be overrepresented in the data due to a higher number of police calls, which can lead to the prioritization of calls from those neighborhoods over others. Additionally, there may be biases in the way that certain types of calls are classified or prioritized, which can have negative consequences for certain groups of people.
 
-- `ProjectProposal_groupXXX.ipynb`
-- `DataCheckpoint_groupXXX.ipynb`
-- `EDACheckpoint_groupXXX.ipynb`
-- `FinalProject_groupXXX.ipynb`
+It is important to acknowledge these biases and take steps to mitigate them throughout the data science process. This includes carefully selecting and cleaning the data, using unbiased algorithms and models, and regularly reviewing and monitoring the results to ensure that they are fair and accurate. Additionally, it is important to consider the potential impact of the analysis on different communities and to work to minimize any negative consequences.
 
-This is *your* repo. You are free to manage the repo as you see fit, edit this README, add data files, add scripts, etc. So long as there are the four files above on due dates with the required information, the rest is up to you all. 
+**Conclusion & Discussion**
 
-Also, you are free and encouraged to share this project after the course and to add it to your portfolio. Just be sure to fork it to your GitHub at the end of the quarter!
+The present study aimed to investigate the existence of specific indicators related to the responsiveness rates of the San Diego police department. To accomplish this objective, we analyzed the data obtained from the department concerning the calls received during the period spanning from 2019 to 2023, identifying relevant variables such as call_type, neighborhood, description, etcetera.
+
+In an effort to identify the most significant factor that affected the responsiveness rate of the police, we employed the Ordinary Least Squares regression analysis. This method allowed us to determine which variables carried the most weight in our observations. To prevent overfitting and to evaluate each variable's performance, we calculated the Akaike Information Criterion (AIC) for each model, enabling us to identify the most indicative model for our predictor.
+
+The results of our analysis revealed that the call_type variable was the most significant determinant of responsiveness rate, while the day_of_week variable exhibited the least impact. Specifically, we observed that the AIC for call_type was considerably lower than that of the other variables. In terms of weighted predictors, the order was as follows: call_type, address_sfx_primary, disposition, description, neighborhood, calls_at_hour, hour, and day_of_week.
